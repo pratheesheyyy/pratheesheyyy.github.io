@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pratheesh V P | Product Operations & Business Analysis</title>
+  <meta name="description" content="Career record of Pratheesh V P: product operations, business analysis and cross-functional execution.">
+
+  <!-- Fonts: Bricolage Grotesque for headings, Instrument Sans for text. If they fail to load, the fallbacks are used. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    /* ---------- 1. COLORS & FONTS (change these to restyle the whole site) ---------- */
+    :root {
+      --bg: #F4F7F8;        /* page background */
+      --ink: #12263A;       /* main text */
+      --muted: #52657A;     /* secondary text */
+      --line: #CFDAE1;      /* thin lines */
+      --accent: #0E7490;    /* teal: links, timeline dots */
+      --mark: #F2B134;      /* marigold: the highlighted numbers */
+      --head: "Bricolage Grotesque", "Segoe UI", sans-serif;
+      --body: "Instrument Sans", "Segoe UI", sans-serif;
+    }
+    /* Dark theme: used automatically if the visitor's device is set to dark mode */
+    @media (prefers-color-scheme: dark) {
+      :root { --bg: #0F1B28; --ink: #E6EEF3; --muted: #98AABA; --line: #27394B; --accent: #4CC3DD; }
+    }
+
+    /* ---------- 2. BASIC PAGE SETUP ---------- */
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0; background: var(--bg); color: var(--ink);
+      font: 400 1.05rem/1.65 var(--body);
+    }
+    .wrap { max-width: 860px; margin: 0 auto; padding: 0 1.5rem; }
+    a { color: var(--accent); }
+    a:focus-visible { outline: 3px solid var(--mark); outline-offset: 3px; }
+    h1, h2, h3 { font-family: var(--head); line-height: 1.1; margin: 0; }
+    section { padding: 4rem 0 1rem; }
+    h2 { font-size: 1.9rem; margin-bottom: 1.8rem; }
+
+    /* ---------- 3. TOP NAVIGATION ---------- */
+    nav { padding: 1.2rem 0; border-bottom: 1px solid var(--line); }
+    nav .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; gap: .6rem 1.5rem; }
+    nav a { color: var(--ink); text-decoration: none; font-weight: 500; }
+    nav a:hover { color: var(--accent); }
+    nav .links { display: flex; gap: 1.4rem; }
+
+    /* ---------- 4. HERO (the first thing visitors see) ---------- */
+    .hero { padding: 5rem 0 2rem; }
+    .hero h1 { font-size: clamp(3rem, 11vw, 6.5rem); font-weight: 800; letter-spacing: -0.03em; }
+    .hero .role { font: 600 1.25rem var(--head); color: var(--accent); margin: 1.2rem 0 1.4rem; }
+    .hero p { max-width: 62ch; color: var(--muted); margin: 0 0 1.6rem; }
+    .btns { display: flex; flex-wrap: wrap; gap: .8rem; }
+    .btn {
+      display: inline-block; padding: .7rem 1.3rem; border-radius: 6px; font-weight: 600;
+      text-decoration: none; border: 2px solid var(--ink); color: var(--ink);
+    }
+    .btn.fill { background: var(--ink); color: var(--bg); }
+    .btn:hover { border-color: var(--accent); }
+
+    /* ---------- 5. MILESTONES (big numbers) ---------- */
+    .miles { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 1.5rem; }
+    .miles div { border-top: 3px solid var(--mark); padding-top: .8rem; }
+    .miles strong { display: block; font: 800 2.3rem var(--head); }
+    .miles span { color: var(--muted); font-size: .95rem; }
+
+    /* ---------- 6. EXPERIENCE TIMELINE ---------- */
+    .timeline { border-left: 2px solid var(--line); margin-left: .4rem; }
+    .job { position: relative; padding: 0 0 2.6rem 1.8rem; }
+    .job::before {            /* the dot on the line */
+      content: ""; position: absolute; left: -.6rem; top: .45rem;
+      width: 1rem; height: 1rem; border-radius: 50%;
+      background: var(--bg); border: 3px solid var(--accent);
+    }
+    .job .when { color: var(--muted); font-weight: 500; font-size: .95rem; }
+    .job h3 { font-size: 1.4rem; margin: .2rem 0; }
+    .job .org { color: var(--accent); font-weight: 600; margin-bottom: .6rem; }
+    .job p { margin: 0 0 .8rem; color: var(--muted); }
+    .job ul { margin: 0; padding-left: 1.2rem; }
+    .job li { margin-bottom: .45rem; }
+
+    /* ---------- 7. SKILLS & EDUCATION ---------- */
+    .skills { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.8rem; }
+    .skills h3 { font-size: 1.1rem; margin-bottom: .6rem; }
+    .skills ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: .45rem; }
+    .skills li { border: 1px solid var(--line); border-radius: 999px; padding: .2rem .8rem; font-size: .95rem; }
+    .edu h3 { font-size: 1.25rem; }
+    .edu p { margin: .3rem 0 0; color: var(--muted); }
+
+    /* ---------- 8. CONTACT & FOOTER ---------- */
+    .contact p { max-width: 55ch; color: var(--muted); }
+    footer { margin-top: 4rem; padding: 1.5rem 0; border-top: 1px solid var(--line); color: var(--muted); font-size: .9rem; }
+
+    /* ---------- 9. SMALL SCREENS ---------- */
+    @media (max-width: 560px) { .hero { padding-top: 3rem; } section { padding-top: 3rem; } }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  </style>
+</head>
+
+<body>
+  <!-- NAVIGATION: each link jumps to the section with the matching id -->
+  <nav>
+    <div class="wrap">
+      <a href="#top"><strong>Pratheesh V P</strong></a>
+      <div class="links">
+        <a href="#milestones">Milestones</a>
+        <a href="#experience">Experience</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="wrap" id="top">
+
+    <!-- HERO -->
+    <header class="hero">
+      <h1>Pratheesh V P</h1>
+      <div class="role">Product Operations and Business Analysis</div>
+      <p>I turn operational problems into clear processes, requirements and working solutions. My work so far has been in startups, where I coordinate business and technical teams from the first problem through to launch.</p>
+      <div class="btns">
+        <a class="btn fill" href="#experience">See my career</a>
+        <a class="btn" href="#contact">Get in touch</a>
+      </div>
+    </header>
+
+    <!-- MILESTONES: edit the numbers and labels here -->
+    <section id="milestones">
+      <h2>Milestones</h2>
+      <div class="miles">
+        <div><strong>2 hrs to 2 min</strong><span>Customer query waiting time, after a chatbot I helped implement at Mydesignation.com</span></div>
+        <div><strong>+20%</strong><span>Student enrollment in key regions through outreach and campaigns</span></div>
+        <div><strong>+25%</strong><span>Brand visibility and engagement from digital marketing campaigns</span></div>
+        <div><strong>+15%</strong><span>Customer retention, driven by market and feedback analysis</span></div>
+        <div><strong>6 marketplaces</strong><span>Myntra, Amazon, Flipkart, Slikk, Klydo and AJIO onboarded and cataloged</span></div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE: newest first. To add a job, copy one <div class="job"> block and paste it at the top -->
+    <section id="experience">
+      <h2>Experience</h2>
+      <div class="timeline">
+
+        <div class="job">
+          <div class="when">April 2026 to August 2026</div>
+          <h3>Product Operations Executive</h3>
+          <div class="org">Mydesignation.com</div>
+          <p>Worked with the Category Head in Product Development on end-to-end product operations, from sourcing to marketplace launch.</p>
+          <ul>
+            <li>Managed product onboarding and cataloging across Myntra, Amazon, Flipkart, Slikk, Klydo and AJIO.</li>
+            <li>Was the main point of contact for product timelines, launch schedules, arrivals, ETAs and estimated delivery dates.</li>
+            <li>Coordinated Sourcing, Warehouse, Product Development, Marketing and Media teams to keep launch readiness aligned.</li>
+            <li>Tracked products from sourcing to warehouse arrival to marketplace onboarding, and flagged dependencies, delays and bottlenecks.</li>
+            <li>Kept stakeholders informed of status and timeline changes so Marketing and Media could plan campaigns and content.</li>
+          </ul>
+        </div>
+
+        <div class="job">
+          <div class="when">June 2025 to April 2026</div>
+          <h3>Founder's Office Executive</h3>
+          <div class="org">Mydesignation.com</div>
+          <p>Worked directly with the Co-Founder and CCO to drive execution across product, operations, sales, customer experience and technology.</p>
+          <ul>
+            <li>Mapped business workflows to find process gaps, bottlenecks and rework, and opportunities for technology-led improvement.</li>
+            <li>Coordinated execution across teams, maintained task trackers and followed up on dependencies.</li>
+            <li>Worked with technical teams to turn business requirements into system-level implementations and workflows.</li>
+            <li>Monitored revenue and operational KPIs through dashboards and reports, and shared insights with leadership.</li>
+            <li>Led customer-service operations in peak periods and supported a chatbot rollout that cut query waiting time from about 2 hours to 2 minutes.</li>
+          </ul>
+        </div>
+
+        <div class="job">
+          <div class="when">October 2024 to February 2025</div>
+          <h3>Business Development Analyst and Executive</h3>
+          <div class="org">Rose Educational Consultants</div>
+          <p>Led growth initiatives by finding opportunities, building client relationships and expanding the market.</p>
+          <ul>
+            <li>Increased student enrollment by 20% in key regions through strategic outreach and targeted campaigns.</li>
+            <li>Built partnerships with educational institutions and visa services to streamline admissions.</li>
+            <li>Analyzed market trends and client feedback to shape tailored solutions, lifting customer retention by 15%.</li>
+            <li>Launched digital marketing campaigns that raised brand visibility and engagement by 25%.</li>
+            <li>Worked with cross-functional teams to improve customer experience and conversion rates.</li>
+          </ul>
+        </div>
+
+        <div class="job">
+          <div class="when">July 2024 to October 2024</div>
+          <h3>Workflow Manager Intern</h3>
+          <div class="org">AIO Creators YT Ltd.</div>
+          <p>Coordinated projects and teams to keep content production on schedule.</p>
+          <ul>
+            <li>Coordinated daily production schedules for multiple content teams.</li>
+            <li>Planned task assignments and made sure deliverables met deadlines.</li>
+            <li>Maintained workflow trackers and monitored project progress.</li>
+            <li>Connected creators, editors and production teams.</li>
+            <li>Introduced workflow improvements that streamlined production.</li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SKILLS & EDUCATION -->
+    <section id="skills">
+      <h2>Skills and education</h2>
+      <div class="skills">
+        <div>
+          <h3>Strengths</h3>
+          <ul>
+            <li>Project coordination</li><li>Problem-solving</li><li>Requirement gathering</li>
+            <li>Analytical thinking</li><li>Product performance analysis</li><li>Dashboard tracking</li>
+            <li>Cross-functional execution</li><li>Stakeholder coordination</li><li>Process optimization</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Tools</h3>
+          <ul>
+            <li>Python</li><li>Java</li><li>C++</li><li>SQL</li><li>Power BI</li><li>Clarity</li>
+            <li>Trello</li><li>Monday Board</li><li>Google Suite</li><li>MS Office</li>
+            <li>Shopify</li><li>EasyEcom</li><li>Meta Ads</li><li>Canva</li><li>ChatGPT</li>
+          </ul>
+        </div>
+        <div class="edu">
+          <h3>Education</h3>
+          <p><strong>B.Tech, Computer Science and Engineering</strong><br>St. Thomas Institute for Science and Technology, Thiruvananthapuram</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT: only email and LinkedIn, no phone number -->
+    <section id="contact" class="contact">
+      <h2>Contact</h2>
+      <p>The best way to reach me is by email or LinkedIn.</p>
+      <div class="btns">
+        <a class="btn fill" href="mailto:pratheeshvp18@gmail.com">pratheeshvp18@gmail.com</a>
+        <a class="btn" href="https://www.linkedin.com/in/pratheesh-v-p-82873a24b" target="_blank" rel="noopener">LinkedIn profile</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">&copy; <span id="year">2026</span> Pratheesh V P</div>
+  </footer>
+
+  <script>
+    // Keeps the footer year current automatically
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
